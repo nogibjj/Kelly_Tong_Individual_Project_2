@@ -42,7 +42,7 @@ extract:
 transform_load:
 	cargo run transform_load
 
-# Query the top 5 rows from the CarsDB table
+# Query the top 5 rows from the AutoDB table
 query:
 	cargo run query
 
