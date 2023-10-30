@@ -34,16 +34,19 @@ jobs:
     - name: Check Rust versions
       run: make rust-version
 
+    - name: build Rust
+      run: make release
+
     - name: Format code
       run: make format
 
     - name: Lint code
       run: make lint
 
-    - name: Create CarsDB table
+    - name: Create AutoDB table
       run: make create-table
 
-    - name: Insert data into CarsDB
+    - name: Insert data into AutoDB
       run: make create
 
     ## CRUD 
