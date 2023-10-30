@@ -5,8 +5,13 @@ This is a repository for IDS 706 individual project #2 assignment.
 This repository creates a Rust CLI (Command Line Interface) tool that utilizes SQLite database to perform extract, transform_load and query of the Auto dataset. 
 A database from online url is extracted into a csv file which is saved directly to the repository. It is then transformed into a SQLite database format and loaded into the SQLite database. Query commands can be performed based on this database format. 
 
-### Github Workflows
+### Github Actions Workflows
 [![Rust CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml)
+
+This repository has CI/CD set up in Github Actions Workflows. The workflows include:
+- formatting, linting, testing, generate and push
+- specific query commands: create, delete, read, update
+- Archive Binary: Binary is also incorporate into the Github Actions. For downloading the binary, go to Github Actions, Workflows and download. 
 
 ### Function
 
