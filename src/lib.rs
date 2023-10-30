@@ -48,7 +48,7 @@ pub fn transform_load(dataset: &str) -> Result<String, Box<dyn std::error::Error
     conn.execute("DROP TABLE IF EXISTS AutoDB", params![])?;
 
     let create_table_query = "
-        CREATE TABLE CarsDB (
+        CREATE TABLE AutoDB (
             MPG REAL,
             Cylinders INTEGER,
             Displacement REAL,
@@ -98,7 +98,7 @@ pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
     {
         let mut stmt = conn.prepare(query_string)?;
         let Auto_iter = stmt.query_map([], |row| {
-            Ok(Car {         
+            Ok(Auto {         
                 _mpg: row.get(0)?,
                 _cylinders: row.get(1)?,
                 _displacement: row.get(2)?,
