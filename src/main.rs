@@ -1,38 +1,45 @@
-extern crate polars;
-
-use polars::prelude::*;
-use std::error::Error;
-use std::result::Result as StdResult;
-
 mod lib;
+use std::env;
 
-fn main() -> StdResult<(), Box<dyn Error>> {
-    let file_path = "Auto.csv";
-
-    let df = CsvReader::from_path(file_path)?
-        .infer_schema(None)
-        .has_header(true)
-        .finish()?;
-
-    if !df.is_empty() {
-        println!("DataFrame is not empty.");
-
-        let avg = lib::compute_average(&df)?;
-        match (
-            avg.get("overall average"),
-            avg.get("column average"),
-            avg.get("row average"),
-        ) {
-            (Some(overall_avg), Some(column_avg), Some(row_avg)) => {
-                println!("overall average: {:.2}", overall_avg);
-                println!("column average: {:.2}", column_avg);
-                println!("row average: {:.2}", row_avg);
-            }
-            _ => println!("Failed to compute some averages."),
-        }
-    } else {
-        println!("DataFrame is empty.");
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        println!("Usage: {} [action]", args[0]);
+        return;
     }
 
-    Ok(())
+    let action = &args[1];
+    match action.as_str() {
+        "extract" => {
+            let result = extract(
+                "https://raw.githubusercontent.com/selva86/datasets/master/Auto.csv",
+                "Auto.csv",
+            );
+            match result {
+                Ok(path) => println!("Data extraction completed successfully. Saved to {}", path),
+                Err(e) => eprintln!("Error during extraction: {:?}", e),
+            }
+        }
+        "transform_load" => {
+            let result = transform_load("Auto.csv");
+            match result {
+                Ok(path) => println!(
+                    "Data transformation and loading completed successfully. DB path: {}",
+                    path
+                ),
+                Err(e) => eprintln!("Error during loading: {:?}", e),
+            }
+        }
+        "query" => {
+            if args.len() < 3 {
+                println!("Please provide a SQL query string");
+                return;
+            }
+            let query_string = &args[2];
+            query(query_string).unwrap();
+        }
+        _ => {
+            println!("Invalid action. Use 'extract', 'transform_load', or 'query'.");
+        }
+    }
 }
