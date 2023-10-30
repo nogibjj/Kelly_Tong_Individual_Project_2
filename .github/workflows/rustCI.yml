@@ -40,6 +40,25 @@ jobs:
     - name: Lint code
       run: make lint
 
+    - name: Create CarsDB table
+      run: make create-table
+
+    - name: Insert data into CarsDB
+      run: make create
+
+    ## CRUD 
+    - name: Create 
+      run: make create 
+    
+    - name: Read
+      run: make read 
+    
+    - name: Update 
+      run: make update 
+   
+    - name: Delete 
+      run: make delete
+
     - name: Run tests
       run: make test
 
@@ -53,6 +72,11 @@ jobs:
     #     git config --global user.email "actions@github.com"
     #     git remote set-url origin https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/yabeizeng1121/Mini8.git
 
+    - name: Archive Binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: optimized-binary
+        path: target/release/invidivual_project_kelly_rust
           
     - name: Generate and push logs
       run: make generate_and_push
