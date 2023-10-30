@@ -9,20 +9,44 @@ Improvement in running time, speed, and resource usage can be analyzed and
 evluated through the repository action. 
 
 ### Github Workflows
-[![Python CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/pyCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/pyCI.yml)
-
 [![Rust CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml)
 
-### Comparison
+### Function
 
 ### Building Process
-Python Building Process Overview
-
-<img width="890" alt="python_buildingprocess" src="https://github.com/nogibjj/MiniProject8_KellyTong/assets/142815940/56618e34-0989-4fe6-b745-1dc5b2bdb36c">
-
-Python_test
-
-<img width="731" alt="test" src="https://github.com/nogibjj/MiniProject8_KellyTong/assets/142815940/c160b9e2-a61c-439d-8d3e-b793920e8e77">
 
 Rust Building Process Overview
-<img width="886" alt="rust_buildingprocess" src="https://github.com/nogibjj/MiniProject8_KellyTong/assets/142815940/9b5c00c9-542c-40cb-9ca4-100a8e3e4e00">
+
+<img width="896" alt="rust_building" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/01398530-716c-46be-ba1f-fbe94b8df3a8">
+
+`Preparation`
+prepare codespace environment 
+
+`Install Dependencies`
+run **Cargo build** in codespace to install all the dependencies required for running extract, transform_load and query in this repository
+
+<img width="734" alt="cargo build" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/e869eca8-23ff-47f8-b6f9-377c69368411">
+
+`Extraction`
+extract dataset from an url to a csv file which is automatically saved and pushed into this repository. 
+
+run **make extract** or **cargo run extract** in codespace to function extraction
+
+<img width="508" alt="截屏2023-10-29 23 39 13" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/69723709-fe8e-4e4d-8c97-1b52a087d7d6">
+
+`Transform_load`
+transfrom dataset in the csv file (Auto.csv) to a database (AutoDB.db)
+
+run **make transform_load** or **cargo run transform_load** in codespace to function transform_load
+
+<img width="571" alt="transform_load" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/36de6cf3-d960-49bd-828c-c7cc36afa3a0">
+
+`Query`
+build specific query for the dataset (detailed query messages can be found in Makefile)
+
+run **make query** or **cargo run query** in code space and then run "specific query messages to function specific query
+example query command (more can be found in Makefile or query_log.md: 
+
+<img width="499" alt="extract" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/5ccbce83-b8d3-495b-a9ce-6dd638ff70ef">
+
+<img width="911" alt="query message" src="https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/assets/142815940/90d9ffc5-e93c-4e54-83ff-39dd8bae319e">
