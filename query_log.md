@@ -22,3 +22,7 @@ UPDATE AutoDB SET MPG=20.0, Cylinders=6 WHERE Name = 'Chevrolet Chevelle Malibu'
 DELETE FROM AutoDB WHERE Name = 'Chevrolet Chevelle Malibu';
 ```
 
+```sql
+SELECT * FROM AutoDB LIMIT 5;
+```
+

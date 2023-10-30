@@ -21,7 +21,7 @@ fn log_query(query: &str, log_file: &str) {
 }
 
 #[derive(Debug)]
-pub struct Auto {   
+pub struct Auto {
     _mpg: f64,
     _cylinders: i32,
     _displacement: f64,
@@ -98,7 +98,7 @@ pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
     {
         let mut stmt = conn.prepare(query_string)?;
         let Auto_iter = stmt.query_map([], |row| {
-            Ok(Auto {         
+            Ok(Auto {
                 _mpg: row.get(0)?,
                 _cylinders: row.get(1)?,
                 _displacement: row.get(2)?,
