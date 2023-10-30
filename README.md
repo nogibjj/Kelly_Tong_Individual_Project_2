@@ -29,7 +29,16 @@ This repository has CI/CD set up in Github Actions Workflows. The workflows incl
 - This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
 
 ### Dependencies
--
+- reqwest = { version = "^0.11", features = ["blocking"] }: A popular Rust HTTP client library. The "blocking" feature enables synchronous (non-async) network requests, making it easier to use in contexts where asynchronous operations aren't required or desired.
+
+- rusqlite = "^0.29": A Rust binding for the SQLite3 library, allowing for interaction with SQLite databases.
+
+- csv = "^1.0": A crate to read and write CSV (Comma-Separated Values) files, providing utilities to serialize and deserialize CSV data.
+
+- assert_cmd = "^2.0": A crate that aids in writing integration tests for command-line applications. It provides a way to spawn commands and make assertions on their output and exit status.
+  
+- predicates = "0.9": A library used in conjunction with assert_cmd to define complex assertions on command outputs using predicate logic.
+  
 ### Github Copilot 
 
 
