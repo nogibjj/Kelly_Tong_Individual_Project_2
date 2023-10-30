@@ -116,7 +116,7 @@ pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
                 Ok(Auto) => {
                     println!(
                         "Results: MPG = {}, Cylinders = {}, Displacement = {}, Horsepower = {}, Weight = {}, Acceleration = {}, Year = {}, Origin = {}", Name = {}, 
-                        car._mpg, car._cylinders, car._displacement, car._horsepower, car._weight, car._acceleration, car._year, car._origin, car._name
+                        Auto._mpg, Auto._cylinders, Auto._displacement, Auto._horsepower, Auto._weight, Auto._acceleration, Auto._year, Auto._origin, Auto._name
                     );
                 }
                 Err(e) => eprintln!("Error in row: {:?}", e),
