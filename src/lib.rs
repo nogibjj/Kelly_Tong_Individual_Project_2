@@ -115,7 +115,7 @@ pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
             match result {
                 Ok(Auto) => {
                     println!(
-                        "Results: MPG = {}, Cylinders = {}, Displacement = {}, Horsepower = {}, Weight = {}, Acceleration = {}, Year = {}, Origin = {}", Name = {}, 
+                        "Results: MPG = {}, Cylinders = {}, Displacement = {}, Horsepower = {}, Weight = {}, Acceleration = {}, Year = {}, Origin = {}, Name = {}",  
                         Auto._mpg, Auto._cylinders, Auto._displacement, Auto._horsepower, Auto._weight, Auto._acceleration, Auto._year, Auto._origin, Auto._name
                     );
                 }
