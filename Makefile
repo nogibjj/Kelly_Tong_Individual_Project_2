@@ -1,64 +1,79 @@
+install:
+	@echo "Checking if Rust is installed..."
+	@which rustc &> /dev/null || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	@echo "Installing project dependencies..."
+	@cargo build
+
+
+# Display Rust command-line utility versions
 rust-version:
 	@echo "Rust command-line utility versions:"
-	rustc --version 			#rust compiler
-	cargo --version 			#rust package manager
-	rustfmt --version			#rust code formatter
-	rustup --version			#rust toolchain manager
-	clippy-driver --version		#rust linter
+	rustc --version              # Rust compiler
+	cargo --version              # Rust package manager
+	rustfmt --version            # Rust code formatter
+	rustup --version             # Rust toolchain manager
+	clippy-driver --version      # Rust linter
 
+# Format code using rustfmt
 format:
 	cargo fmt --quiet
 
-install:
-	# Install if needed
-	#@echo "Updating rust toolchain"
-	#rustup update stable
-	#rustup default stable 
-
+# Run clippy for linting
 lint:
 	cargo clippy --quiet
 
+# Run tests
 test:
 	cargo test --quiet
 
+# Build and run the project
 run:
 	cargo run
 
+# Build release version
 release:
 	cargo build --release
 
+# Extract data
+extract: 
+	cargo run extract
+
+# Transform and Load data
+transform_load:
+	cargo run transform_load
+
+# Query the top 5 rows from the CarsDB table
+query:
+	cargo run query
+
+create-table:
+	cargo run query "CREATE TABLE IF NOT EXISTS AutoDB (MPG REAL, Cylinders INTEGER,Displacement REAL,Horsepower REAL,Weight REAL,Acceleration REAL,Year INTEGER,Origin INTEGER,Name Text);"
+
+create:
+	cargo run query "INSERT INTO AutoDB (MPG, Cylinders, Displacement, Horsepower, Weight, Acceleration, Year, Origin, Name) VALUES (25.0, 4, 150.0, 100.0, 2500.0, 10.0, 70, 1,'Example Auto');"
+
+# Read a specific car entry from the AutoDB table using the Auto name
+read:
+	cargo run query "SELECT * FROM AutoDB WHERE Name = 'Chevrolet Chevelle Malibu';"
+
+# Update a specific car entry in the AutoDB table
+update:
+	cargo run query "UPDATE AutoDB SET MPG=20.0, Cylinders=6 WHERE Name = 'Chevrolet Chevelle Malibu';"
+
+# Delete a specific car entry from the AutoDB table
+delete:
+	cargo run query "DELETE FROM AutoDB WHERE Name = 'Chevrolet Chevelle Malibu';"
+
+# Run all formatting, linting, and testing tasks
 all: format lint test run
 
-python_install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
-
-python_test:
-	python -m pytest -vv --cov=main --cov=mylib test_*.py
-
-python_format:	
-	black *.py 
-
-python_lint:
-	ruff check *.py mylib/*.py
-
-python_container-lint:
-	docker run --rm -i hadolint/hadolint < Dockerfile
-
-python_refactor: format lint
-
-python_deploy:
-	#deploy goes here
-		
-python_all: install lint test format deploy
-
+# Generate and push changes to GitHub
 generate_and_push:
-	# Add, commit, and push the generated files to GitHub
 	@if [ -n "$$(git status --porcelain)" ]; then \
-		git config --local user.email "action@github.com"; \
+		git config --local usetest.rsr.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
 		git add .; \
-		git commit -m "Add metric log"; \
+		git commit -m "Add query log"; \
 		git push; \
 	else \
 		echo "No changes to commit. Skipping commit and push."; \
