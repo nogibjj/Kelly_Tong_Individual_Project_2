@@ -28,6 +28,11 @@ This repository has CI/CD set up in Github Actions Workflows. The workflows incl
 - Specific SQL Query can be done to the dataset
 - This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
 
+### Dependencies
+-
+### Github Copilot 
+
+
 ### Building Process
 
 Rust Building Process Overview
