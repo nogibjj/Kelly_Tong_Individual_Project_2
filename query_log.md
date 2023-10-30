@@ -26,3 +26,7 @@ DELETE FROM AutoDB WHERE Name = 'Chevrolet Chevelle Malibu';
 SELECT * FROM AutoDB LIMIT 5;
 ```
 
+```sql
+SELECT * FROM AutoDB LIMIT 5;
+```
+
