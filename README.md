@@ -9,7 +9,7 @@ Improvement in running time, speed, and resource usage can be analyzed and
 evluated through the repository action. 
 
 ### Github Workflows
-[![Python CI/CD](https://github.com/nogibjj/MiniProject8_KellyTong/actions/workflows/pyCI.yml/badge.svg)](https://github.com/nogibjj/MiniProject8_KellyTong/actions/workflows/pyCI.yml)
+[![Python CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/pyCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/pyCI.yml)
 
 [![Rust CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml)
 
