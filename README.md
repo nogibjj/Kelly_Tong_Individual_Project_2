@@ -1,5 +1,5 @@
-## IDS 706 MiniProject8: Rewrite a Python Script in Rust
-This is a repository for IDS 706 mini project week 8 assignment.
+## IDS 706 Individual Project #2: Rust CLI Binary with SQLite
+This is a repository for IDS 706 individual project #2 assignment. 
 
 ### Purpose
 This repository compares the running time and efficiency of python and rust. 
