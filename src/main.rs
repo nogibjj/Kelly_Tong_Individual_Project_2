@@ -1,4 +1,4 @@
-mod lib;
+use invidivual_project_kelly_rust::{extract, query, transform_load};
 use std::env;
 
 fn main() {
