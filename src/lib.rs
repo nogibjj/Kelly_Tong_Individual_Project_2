@@ -89,7 +89,7 @@ pub fn transform_load(dataset: &str) -> Result<String, Box<dyn std::error::Error
 }
 
 pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
-    let conn = Connection::open("Auto.db")?;
+    let conn = Connection::open("AutoDB.db")?;
 
     if query_string
         .trim_start()
