@@ -13,6 +13,18 @@ evluated through the repository action.
 
 ### Function
 
+*Extraction
+Extract data from an url to a csv file
+Automatically save and push this csv file in this repository
+
+*Transform_load
+Transform the csv file to a databse (in this case Auto.csv is transformed into AutoDB.db)
+This ensure the database file is in a format suitable for SQLite database and that it prepares the format for later query command. 
+
+*Query
+Specific SQL Query can be done to the dataset
+This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
+
 ### Building Process
 
 Rust Building Process Overview
