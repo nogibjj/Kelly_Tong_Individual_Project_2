@@ -2,28 +2,26 @@
 This is a repository for IDS 706 individual project #2 assignment. 
 
 ### Purpose
-This repository compares the running time and efficiency of python and rust. 
-This is done by performing the same data processing with python script and rust.
-In this case, the average of the chosen columns/variables are calculated. 
-Improvement in running time, speed, and resource usage can be analyzed and
-evluated through the repository action. 
+This repository creates a Rust CLI (Command Line Interface) tool that utilizes SQLite database to perform extract, transform_load and query of the Auto dataset. 
+A database from online url is extracted into a csv file which is saved directly to the repository. It is then transformed into a SQLite database format and loaded into the SQLite database. Query commands can be performed based on this database format. 
 
 ### Github Workflows
 [![Rust CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml)
 
 ### Function
 
-*Extraction
-Extract data from an url to a csv file
-Automatically save and push this csv file in this repository
+**Extraction**
 
-*Transform_load
-Transform the csv file to a databse (in this case Auto.csv is transformed into AutoDB.db)
-This ensure the database file is in a format suitable for SQLite database and that it prepares the format for later query command. 
+- Extract data from an url to a csv file
+- Automatically save and push this csv file in this repository
 
-*Query
-Specific SQL Query can be done to the dataset
-This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
+**Transform_load**
+- Transform the csv file to a databse (in this case Auto.csv is transformed into AutoDB.db)
+- This ensure the database file is in a format suitable for SQLite database and that it prepares the format for later query command. 
+
+**Query**
+- Specific SQL Query can be done to the dataset
+- This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
 
 ### Building Process
 
