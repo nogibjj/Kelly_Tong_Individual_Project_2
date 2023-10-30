@@ -3,7 +3,7 @@ use invidivual_project_kelly_rust::{extract, query, transform_load};
 #[test]
 fn test_extract_and_transform_load() {
     let url = "https://raw.githubusercontent.com/selva86/datasets/master/Auto.csv";
-    let file_path = "Auto_test.csv";
+    let file_path = "test_Auto.csv";
 
     // Extract
     extract(url, file_path).unwrap();
