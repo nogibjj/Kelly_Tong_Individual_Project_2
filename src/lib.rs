@@ -85,7 +85,7 @@ pub fn transform_load(dataset: &str) -> Result<String, Box<dyn std::error::Error
         )?;
     }
 
-    Ok("Auto.db".to_string())
+    Ok("AutoDB.db".to_string())
 }
 
 pub fn query(query_string: &str) -> Result<String, rusqlite::Error> {
