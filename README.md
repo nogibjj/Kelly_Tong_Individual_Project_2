@@ -29,6 +29,8 @@ This repository has CI/CD set up in Github Actions Workflows. The workflows incl
 - This includes SQL query function like: create-table, create, read, update, delete query commands (specific commands can be found in Makefile or query_log.md)
 
 ### Dependencies
+Run Cargo Build to download all the dependencies
+
 - reqwest = { version = "^0.11", features = ["blocking"] }: A popular Rust HTTP client library. The "blocking" feature enables synchronous (non-async) network requests, making it easier to use in contexts where asynchronous operations aren't required or desired.
 
 - rusqlite = "^0.29": A Rust binding for the SQLite3 library, allowing for interaction with SQLite databases.
