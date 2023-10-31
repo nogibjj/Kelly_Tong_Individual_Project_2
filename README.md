@@ -43,6 +43,21 @@ Run Cargo Build to download all the dependencies
   
 ### Github Copilot 
 
+**Direct Translation**: You can provide a Python snippet and ask Copilot (or Codex) to translate it to Rust. 
+
+**Code Suggestions**: As you type Rust code, Copilot can suggest completions. This is especially handy for developers new to the Rust language, helping them with Rust's unique syntax and concepts.
+
+**Error Handling**: One of Rust's key features is its robust error-handling through the Result and Option types. Copilot can help generate these patterns, suggesting ways to handle potential errors or unwrap values safely.
+
+**Performance Tips**: Given Rust's focus on performance, Copilot might offer insights or suggestions to improve code efficiency, such as using certain data structures or algorithms.
+
+**Borrow Checker Assistance**: Rust's borrow checker ensures safe memory access but can be challenging for newcomers. Copilot can help by suggesting fixes to borrow checker errors or guiding on lifetimes and borrowing rules.
+
+**Library Usage**: If you're using a particular Rust crate and aren't sure about its functions or usage, Copilot can help by providing examples or correct usages based on the context.
+
+**Integration with Documentation**: Copilot can fetch documentation snippets for Rust's standard library or other popular crates, aiding in quicker referencing without leaving the coding environment.
+
+**Feedback Loop**: As developers interact with Copilot, they can accept, modify, or reject its suggestions. This interaction can be a learning process for both the developer and the model, leading to better suggestions over time.
 
 ### Building Process
 
