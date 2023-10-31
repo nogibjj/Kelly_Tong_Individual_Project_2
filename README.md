@@ -9,7 +9,7 @@ A database from online url is extracted into a csv file which is saved directly 
 [![Rust CI/CD](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Kelly_Tong_Individual_Project_2/actions/workflows/rustCI.yml)
 
 This repository has CI/CD set up in Github Actions Workflows. The workflows include:
-- formatting, linting, testing, generate and push
+- building, formatting, linting, testing, generate and push
 - specific query commands: create, delete, read, update
 - Archive Binary: Binary is also incorporate into the Github Actions. For downloading the binary, go to Github Actions, click on one of the Workflows, go to the bottom of the page and download the file. 
 
