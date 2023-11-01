@@ -2,7 +2,7 @@
 This is a repository for IDS 706 individual project #2 assignment. 
 
 ### Demo Video
-
+Please find my [Demo Video](https://youtu.be/N42CFvCqxtw) here
 
 ### Purpose
 This repository creates a Rust CLI (Command Line Interface) tool that utilizes SQLite database to perform extract, transform_load and query of the Auto dataset. 
